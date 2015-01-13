@@ -115,7 +115,7 @@ Use `#pragma mark -` to categorize methods in functional groupings and protocol/
 
 ## Spacing
 
-* Indent using 2 spaces (this conserves space in print and makes line wrapping less likely). Never indent with tabs. Be sure to set this preference in Xcode.
+* Indent using 4 spaces. Never indent with tabs. Be sure to set this preference in Xcode.
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
 
 **Preferred:**
@@ -222,7 +222,7 @@ id varnm;
 
 ### Underscores
 
-When using properties, instance variables should always be accessed and mutated using `self.`. This means that all properties will be visually distinct, as they will all be prefaced with `self.`. 
+When using properties, instance variables should always be accessed and mutated using `self.`. This means that all properties will be visually distinct, as they will all be prefaced with `self.`.
 
 An exception to this: inside initializers, the backing instance variable (i.e. _variableName) should be used directly to avoid any potential side effects of the getters/setters.
 
@@ -258,7 +258,7 @@ Variables should be named as descriptively as possible. Single letter variable n
 
 Asterisks indicating pointers belong with the variable, e.g., `NSString *text` not `NSString* text` or `NSString * text`, except in the case of constants.
 
-[Private properties](#private-properties) should be used in place of instance variables whenever possible. Although using instance variables is a valid way of doing things, by agreeing to prefer properties our code will be more consistent. 
+[Private properties](#private-properties) should be used in place of instance variables whenever possible. Although using instance variables is a valid way of doing things, by agreeing to prefer properties our code will be more consistent.
 
 Direct access to instance variables that 'back' properties should be avoided except in initializer methods (`init`, `initWithCoder:`, etc…), `dealloc` methods and within custom setters and getters. For more information on using Accessor Methods in Initializer Methods and dealloc, see [here](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6).
 
@@ -299,7 +299,7 @@ Property attributes should be explicitly listed, and will help new programmers w
 @property (nonatomic) NSString *tutorialName;
 ```
 
-Properties with mutable counterparts (e.g. NSString) should prefer `copy` instead of `strong`. 
+Properties with mutable counterparts (e.g. NSString) should prefer `copy` instead of `strong`.
 Why? Even if you declared a property as `NSString` somebody might pass in an instance of an `NSMutableString` and then change it without you noticing that.  
 
 **Preferred:**
@@ -431,7 +431,7 @@ switch (condition) {
   case 3:
     // ...
     break;
-  default: 
+  default:
     // ...
     break;
 }
@@ -447,7 +447,7 @@ switch (condition) {
   case 2:
     // code executed for values 1 and 2
     break;
-  default: 
+  default:
     // ...
     break;
 }
@@ -579,7 +579,7 @@ See [Class Constructor Methods](#class-constructor-methods) for link to article 
 
 ## Class Constructor Methods
 
-Where class constructor methods are used, these should always return type of 'instancetype' and never 'id'. This ensures the compiler correctly infers the result type. 
+Where class constructor methods are used, these should always return type of 'instancetype' and never 'id'. This ensures the compiler correctly infers the result type.
 
 ```objc
 @interface Airplane
@@ -697,7 +697,7 @@ self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:pro
 ```
 A long line of code like this should be carried on to the second line adhering to this style guide's Spacing section (two spaces).
 ```objc
-self.productsRequest = [[SKProductsRequest alloc] 
+self.productsRequest = [[SKProductsRequest alloc]
   initWithProductIdentifiers:productIdentifiers];
 ```
 
